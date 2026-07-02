@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shravan Kotagi - Resume</title>
+  <style>
+    /* Page settings for A4 print */
+    @page {
+      size: A4;
+      margin: 15mm 20mm;
+    }
+    
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      color: #000;
+      background-color: #fff;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      font-size: 11.5px;
+    }
+
+    .resume-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Print Controls Header (hidden in print) */
+    .print-header {
+      background-color: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-radius: 6px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .print-title {
+      font-weight: 700;
+      color: #1f2937;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .print-btn {
+      background-color: #4f46e5;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: background-color 0.2s;
+    }
+
+    .print-btn:hover {
+      background-color: #4338ca;
+    }
+
+    /* Header formatting */
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-info {
+      font-size: 10.5px;
+      margin-bottom: 6px;
+    }
+
+    .contact-info a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Section styling */
+    .section-title {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 1px solid #000;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .summary-text {
+      text-align: justify;
+      margin-bottom: 10px;
+    }
+
+    /* Skills styling */
+    .skills-list {
+      margin-bottom: 10px;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    .skills-list li {
+      margin-bottom: 4px;
+      text-align: justify;
+    }
+
+    /* Experience & Projects block */
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-top: 8px;
+      margin-bottom: 3px;
+    }
+
+    .item-title {
+      font-style: italic;
+      font-weight: normal;
+    }
+
+    .bullet-list {
+      margin: 0 0 8px 0;
+      padding-left: 18px;
+    }
+
+    .bullet-list li {
+      margin-bottom: 3px;
+      text-align: justify;
+    }
+
+    .cert-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .cert-list li {
+      margin-bottom: 3px;
+    }
+
+    .cert-date {
+      float: right;
+      font-weight: bold;
+    }
+
+    /* Hide print-only components */
+    @media print {
+      .print-header {
+        display: none !important;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-container">
+    <!-- Interactive Header (Only visible in browser preview) -->
+    <div class="print-header">
+      <h1 class="print-title">Print Preview - Shravan Kotagi's Resume</h1>
+      <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <!-- Resume Body -->
+    <div class="header">
+      <div class="name">Shravan Kotagi</div>
+      <div class="contact-info">
+        +91 8262937458 | 
+        <a href="mailto:shravankotagi314@gmail.com">shravankotagi314@gmail.com</a> | 
+        <a href="https://linkedin.com/in/shravankotagi" target="_blank">linkedin.com/in/shravankotagi</a> | 
+        <a href="https://github.com/Shravankotagi" target="_blank">github.com/Shravankotagi</a> | 
+        Kolhapur, Maharashtra 416005, India
+      </div>
+    </div>
+
+    <div class="section-title">Professional Summary</div>
+    <div class="summary-text">
+      Computer Science student specializing in backend development and AI engineering with a strong foundation in Java, Python, Node.js, databases (MySQL, MongoDB), and cloud technologies (AWS). Proven experience building scalable backend systems, RESTful APIs, voice agents, and end-to-end AI-powered products deployed in production. Seeking a Backend Engineering Intern role to contribute to building robust, scalable backend services.
+    </div>
+
+    <div class="section-title">Technical Skills</div>
+    <ul class="skills-list">
+      <li><strong>Programming Languages:</strong> Java, Python, SQL, TypeScript, HTML, CSS</li>
+      <li><strong>Backend Technologies:</strong> RESTful APIs, Microservices, Spring Framework, FastAPI, Flask, Node.js, Express.js, Next.js</li>
+      <li><strong>Databases & Caching:</strong> MySQL, MongoDB, Redis, PostgreSQL, DBMS, Data Modeling</li>
+      <li><strong>Cloud & DevOps:</strong> AWS (EC2, S3), Git, GitHub, CI/CD, Docker, Railway, Render, Vercel</li>
+      <li><strong>AI & Tools:</strong> LangChain, Gemini API, OpenAI Whisper, TensorFlow, Scikit-learn, Socket.io, OpenCV, Hugging Face, YOLO, FAISS, Pinecone</li>
+      <li><strong>Development Practices:</strong> OOP, System Design, SDLC, Agile, Technical Documentation, Testing & Debugging</li>
+    </ul>
+
+    <div class="section-title">Education</div>
+    <div class="item-header">
+      <span>Kolhapur Institute of Technology</span>
+      <span>2022 – 2026</span>
+    </div>
+    <div class="item-header" style="margin-top: 0;">
+      <span class="item-title">Bachelor of Engineering in Computer Science (AI & ML Specialization)</span>
+      <span>Kolhapur, India</span>
+    </div>
+    <div style="margin-top: 2px;">
+      <strong>CGPA:</strong> 7.5/10.00 | <strong>Relevant Coursework:</strong> DSA, DBMS, OOP, OS, Computer Networks, Software Engineering, Cloud Computing, System Design
+    </div>
+
+    <div class="section-title">Professional Experience</div>
+    
+    <!-- Enlight Lab -->
+    <div class="item-header">
+      <span>Enlight Lab</span>
+      <span>March 2025 – May 2025</span>
+    </div>
+    <div class="item-header" style="margin-top: 0;">
+      <span class="item-title">AI Engineer Intern</span>
+      <span>Remote</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Built and deployed multiple end-to-end AI products independently — Voice Agent, AI Clinical Scribe (Whisper + FastAPI + Next.js), and an AI Readiness Testing tool — all shipped to the company website and contributing directly to client revenue generation.</li>
+      <li>Engineered the PRD Document Creator (Next.js, Gemini API) as a full conversational intake-to-document pipeline; deployed on the company platform and actively used in live client engagements.</li>
+      <li>Demonstrated complete end-to-end ownership across all four products — from system architecture, backend API design, and database setup (PostgreSQL/Prisma) through frontend integration, Docker deployment, and production release.</li>
+    </ul>
+
+    <!-- Airport Authority of India -->
+    <div class="item-header">
+      <span>Airport Authority of India, Kolhapur</span>
+      <span>July 2024 – August 2024</span>
+    </div>
+    <div class="item-header" style="margin-top: 0;">
+      <span class="item-title">Project Intern / AI & ML Intern</span>
+      <span>Kolhapur, India</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Developed real-time video processing system integrating 15+ CCTV feeds using Python and OpenCV at 30 FPS with optimized multi-threading, reducing manual surveillance workload by 70% with 90.6% threat detection accuracy.</li>
+      <li>Built backend service for automated alert generation and logging, and designed scalable system architecture with data flow diagrams for integration with existing airport IT infrastructure.</li>
+    </ul>
+
+    <!-- Softech Solutions -->
+    <div class="item-header">
+      <span>Softech Solutions Pvt. Ltd.</span>
+      <span>June 2024 – August 2024</span>
+    </div>
+    <div class="item-header" style="margin-top: 0;">
+      <span class="item-title">Software Development Intern</span>
+      <span>Kolhapur, India</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Developed a database-driven inventory management system; wrote SQL queries for data validation, reducing manual workload by 35% and improving operational efficiency by 25%. Used Git for version control and collaborative development.</li>
+      <li>Wrote and executed unit and integration tests; analyzed defects and fixed bugs to improve system reliability; enforced quality standards and review checklists, cutting data entry errors by 60%. Prepared technical documentation for features, bug fixes, and system workflows.</li>
+    </ul>
+
+    <div class="section-title">Key Projects</div>
+
+    <!-- PDF RAG Chatbot -->
+    <div class="item-header">
+      <span>PDF RAG Chatbot – AI Document Question Answering System</span>
+      <span>2024</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Built an end-to-end RAG pipeline using Python, LangChain, FAISS, Pinecone, and Gemini API to answer queries from PDFs using semantic search, chunking, and text embeddings, hosted via Streamlit UI.</li>
+      <li>Optimized chunk size and retrieval parameters to reduce LLM hallucinations, ensuring accurate context-aware responses with automated source citations.</li>
+    </ul>
+
+    <!-- ProHomeCare -->
+    <div class="item-header">
+      <span>ProHomeCare – On-Demand Services Platform</span>
+      <span>2024</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Architected full-stack MERN application with microservices backend supporting 100+ concurrent users; JWT auth, RBAC, and auto-scaling deployed on AWS EC2.</li>
+      <li>Optimized MongoDB schemas for sub-100ms queries; Redis caching reduced DB load by 45% and improved API performance by 60%.</li>
+      <li>Integrated Socket.io notifications (50+ sessions) and Razorpay payment gateway with 99.8% transaction success rate.</li>
+    </ul>
+
+    <!-- E-Governance Management System -->
+    <div class="item-header">
+      <span>E-Governance Management System (Quantbit Technologies Hackathon winner)</span>
+      <span>2025</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Built scalable civic issue platform with Java Servlets, normalized MySQL schema, and role-based auth (citizens, officers, admins) handling 1,000+ daily transactions.</li>
+      <li>Automated email notification system reduced citizen follow-up queries by 40%; created real-time SQL aggregation dashboard for issue tracking across departments.</li>
+    </ul>
+
+    <!-- Exhibit Monitor -->
+    <div class="item-header">
+      <span>Exhibit Monitor – File Processing Service (Zensar Technologies Hackathon)</span>
+      <span>2025</span>
+    </div>
+    <ul class="bullet-list">
+      <li>Developed Java backend for automated file monitoring handling 100+ daily files up to 10 GB; multithreaded architecture cut processing time by 50%.</li>
+      <li>Built validation framework with duplicate detection (HashMap), timestamp checks, and JSON-based config; audit logging via Log4j.</li>
+    </ul>
+
+    <div class="section-title">Certifications</div>
+    <ul class="cert-list">
+      <li>Generative AI with Large Language Models – DeepLearning.ai <span class="cert-date">August 2024</span></li>
+      <li>Supervised Machine Learning: Regression and Classification – DeepLearning.ai <span class="cert-date">January 2024</span></li>
+      <li>Deloitte Australia – Technology & Data Analytics Job Simulation <span class="cert-date">June 2024</span></li>
+    </ul>
+
+    <div class="section-title">Additional Information</div>
+    <div style="margin-bottom: 10px;">
+      <strong>Languages:</strong> English (Fluent), Hindi (Fluent), Marathi (Native), Kannada (Conversational)<br>
+      <strong>Interests:</strong> Backend Systems, Distributed Computing, AI Engineering, Cloud Architecture, FinTech
+    </div>
+  </div>
+
+  <script>
+    // Trigger print layout automatically when page has finished rendering
+    window.addEventListener('DOMContentLoaded', () => {
+      // Auto trigger print check
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('print') || window.location.hash === '#print') {
+        setTimeout(() => {
+          window.print();
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>

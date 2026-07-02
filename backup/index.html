@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Shravan Kotagi - Backend Engineer & AI Engineer. Experienced in building scalable APIs, AI pipelines, and distributed systems.">
+  <meta name="author" content="Shravan Kotagi">
+  <title>Shravan Kotagi | Backend Engineer & AI Engineer Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%236F4CFF%22/><text x=%2215%22 y=%2270%22 font-family=%22monospace%22 font-weight=%22bold%22 font-size=%2260%22 fill=%22white%22>&lt;/&gt;</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Devicon for Technology Badges & Logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Core Script -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Background Decorative Blobs -->
+  <div class="blob-container">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo-text">
+        <span class="logo-symbol">&lt;/&gt;</span> Shravan<span class="highlight">.</span>
+      </a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link active">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#ai-scribe" class="nav-link">AI Assistant</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="cv-btn" class="btn btn-primary btn-sm cv-btn">
+          <i class="fa-solid fa-download"></i> Get Resume
+        </button>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Interactive neural background canvas -->
+      <canvas id="neural-canvas"></canvas>
+      
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-tag">
+            <span class="ping-dot"></span> <i class="fa-solid fa-robot"></i> Open for Backend & AI Internships
+          </div>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Shravan Kotagi</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            I build <span id="typewriter" class="typewriter"></span><span class="cursor">|</span>
+          </h2>
+          <p class="hero-description">
+            Computer Science student specializing in backend architecture, microservices, and AI-powered products. Passionate about engineering high-throughput APIs, optimizing complex data models, and deploying intelligent models in production.
+          </p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">
+              <i class="fa-regular fa-paper-plane"></i> Let's Connect
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              View Work <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Shravankotagi" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/shravankotagi" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:shravankotagi314@gmail.com" class="social-icon" aria-label="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+            <a href="tel:+918262937458" class="social-icon" aria-label="Phone">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Metrics / Highlights Section -->
+    <section class="metrics-section">
+      <div class="container grid-4">
+        <div class="metric-item card-hover">
+          <div class="metric-number">4+</div>
+          <div class="metric-label">AI Products Deployed</div>
+        </div>
+        <div class="metric-item card-hover">
+          <div class="metric-number">50%</div>
+          <div class="metric-label">Processing Time Cut</div>
+        </div>
+        <div class="metric-item card-hover">
+          <div class="metric-number">90.6%</div>
+          <div class="metric-label">CCTV Threat Accuracy</div>
+        </div>
+        <div class="metric-item card-hover">
+          <div class="metric-number">2x</div>
+          <div class="metric-label">Hackathon Winner</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle-badge">My Story</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-details">
+            <h3 class="about-subtitle">AI & Backend Engineer Specialization</h3>
+            <p class="about-paragraph">
+              I am currently pursuing my <strong>Bachelor of Engineering in Computer Science</strong> with specialization in <strong>Artificial Intelligence & Machine Learning</strong> from Kolhapur Institute of Technology (CGPA: 7.5/10.00). My sweet spot lies at the intersection of robust backend engineering and modern generative AI technology.
+            </p>
+            <p class="about-paragraph">
+              During my recent internship at <strong>Enlight Lab</strong>, I acted as an autonomous builder, taking multiple end-to-end AI products (Voice Agents, Clinical Scribes, PRD Creator pipelines) from architectural design and database modeling to cloud deployment. I focus on developing systems that are not just smart, but highly performant, utilizing Redis caching, multithreaded workers, and streamlined database schemas to deliver responsive client experiences.
+            </p>
+            <div class="bio-info-grid">
+              <div class="bio-item"><strong>Education:</strong> <span>B.E. CS (AI & ML)</span></div>
+              <div class="bio-item"><strong>Location:</strong> <span>Maharashtra, India</span></div>
+              <div class="bio-item"><strong>Email:</strong> <span>shravankotagi314@gmail.com</span></div>
+              <div class="bio-item"><strong>Relocation:</strong> <span>Open to relocate</span></div>
+            </div>
+          </div>
+          
+          <div class="about-education-card">
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="edu-details">
+                <span class="edu-duration">2022 – 2026</span>
+                <h4 class="edu-degree">Kolhapur Institute of Technology</h4>
+                <p class="edu-major">Bachelor of Engineering in Computer Science (AI & ML)</p>
+                <div class="edu-coursework">
+                  <strong>Coursework:</strong> DSA, DBMS, OOP, OS, Computer Networks, Software Engineering, Cloud Computing
+                </div>
+              </div>
+            </div>
+            
+            <div class="edu-card mt-4">
+              <div class="edu-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="edu-details">
+                <span class="edu-duration">Certifications</span>
+                <ul class="cert-list">
+                  <li><i class="fa-solid fa-circle-check text-primary"></i> Generative AI with LLMs <span class="cert-issuer">(DeepLearning.ai)</span></li>
+                  <li><i class="fa-solid fa-circle-check text-primary"></i> Supervised Machine Learning <span class="cert-issuer">(DeepLearning.ai)</span></li>
+                  <li><i class="fa-solid fa-circle-check text-primary"></i> Tech & Data Analytics Simulation <span class="cert-issuer">(Deloitte Australia)</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section section-padding" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle-badge">Stack & Tools</span>
+          <h2 class="section-title">Technical Expertise</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Backend Engineering -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fa-solid fa-server category-icon"></i>
+              <h3>Backend Technologies</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-tag"><i class="devicon-spring-original colored"></i> Spring Framework</div>
+              <div class="skill-tag"><i class="devicon-nodejs-plain colored"></i> Node.js</div>
+              <div class="skill-tag"><i class="devicon-express-original"></i> Express.js</div>
+              <div class="skill-tag"><i class="devicon-flask-original"></i> Flask</div>
+              <div class="skill-tag"><i class="devicon-nextjs-original-wordmark"></i> Next.js</div>
+              <div class="skill-tag"><i class="fa-solid fa-network-wired text-primary"></i> RESTful APIs</div>
+              <div class="skill-tag"><i class="fa-solid fa-cubes text-secondary"></i> Microservices</div>
+            </div>
+          </div>
+
+          <!-- AI & ML Tools -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fa-solid fa-brain category-icon"></i>
+              <h3>AI & Intelligence</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-tag"><i class="fa-solid fa-link text-primary"></i> LangChain</div>
+              <div class="skill-tag"><i class="fa-solid fa-wand-magic-sparkles text-warning"></i> Gemini API</div>
+              <div class="skill-tag"><i class="fa-solid fa-microphone text-danger"></i> OpenAI Whisper</div>
+              <div class="skill-tag"><i class="devicon-tensorflow-line colored"></i> TensorFlow</div>
+              <div class="skill-tag"><i class="devicon-python-plain colored"></i> Scikit-Learn</div>
+              <div class="skill-tag"><i class="devicon-opencv-plain colored"></i> OpenCV</div>
+              <div class="skill-tag"><i class="fa-solid fa-bolt text-success"></i> Socket.io</div>
+            </div>
+          </div>
+
+          <!-- Databases & Caching -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fa-solid fa-database category-icon"></i>
+              <h3>Databases & DevOps</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-tag"><i class="devicon-mysql-plain colored"></i> MySQL</div>
+              <div class="skill-tag"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</div>
+              <div class="skill-tag"><i class="devicon-mongodb-plain colored"></i> MongoDB</div>
+              <div class="skill-tag"><i class="devicon-redis-plain colored"></i> Redis</div>
+              <div class="skill-tag"><i class="devicon-amazonwebservices-plain colored"></i> AWS EC2 / S3</div>
+              <div class="skill-tag"><i class="devicon-docker-plain colored"></i> Docker</div>
+              <div class="skill-tag"><i class="devicon-git-plain colored"></i> Git / GitHub</div>
+              <div class="skill-tag"><i class="fa-solid fa-arrows-spin text-info"></i> CI/CD</div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <i class="fa-solid fa-code category-icon"></i>
+              <h3>Languages & Practices</h3>
+            </div>
+            <div class="skills-list">
+              <div class="skill-tag"><i class="devicon-java-plain colored"></i> Java</div>
+              <div class="skill-tag"><i class="devicon-python-plain colored"></i> Python</div>
+              <div class="skill-tag"><i class="devicon-typescript-plain colored"></i> TypeScript</div>
+              <div class="skill-tag"><i class="devicon-html5-plain colored"></i> HTML5 & CSS3</div>
+              <div class="skill-tag"><i class="fa-solid fa-gears text-primary"></i> System Design & OOP</div>
+              <div class="skill-tag"><i class="fa-solid fa-users-rectangle text-secondary"></i> Agile Methodology</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section section-padding" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle-badge">Timeline</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">March 2025 – May 2025</div>
+            <div class="timeline-content card-hover">
+              <div class="experience-role-header">
+                <div>
+                  <h3 class="role-title">AI Engineer Intern</h3>
+                  <span class="company-name"><i class="fa-solid fa-building"></i> Enlight Lab</span>
+                </div>
+                <span class="location-badge"><i class="fa-solid fa-location-dot"></i> Remote</span>
+              </div>
+              <ul class="experience-details">
+                <li>Built and deployed multiple end-to-end AI products independently, including a <strong>Real-time Voice Agent</strong>, <strong>AI Clinical Scribe</strong> (utilizing OpenAI Whisper + FastAPI + Next.js), and an <strong>AI Readiness Testing tool</strong>. All shipped to the company platform, contributing directly to revenue.</li>
+                <li>Engineered a <strong>PRD Document Creator</strong> utilizing Next.js and the Gemini API, creating a conversational intake pipeline that converts verbal client requirements into structured technical docs. Active in live client engagements.</li>
+                <li>Demonstrated complete end-to-end ownership across 4 distinct products, designing systems from PostgreSQL schema/Prisma ORM configurations up through Next.js frontend integrations, Docker packaging, and AWS production release.</li>
+              </ul>
+              <div class="tech-badges">
+                <span>Gemini API</span>
+                <span>OpenAI Whisper</span>
+                <span>FastAPI</span>
+                <span>Next.js</span>
+                <span>PostgreSQL</span>
+                <span>Prisma</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">July 2024 – August 2024</div>
+            <div class="timeline-content card-hover">
+              <div class="experience-role-header">
+                <div>
+                  <h3 class="role-title">Project Intern</h3>
+                  <span class="company-name"><i class="fa-solid fa-building"></i> Airport Authority of India</span>
+                </div>
+                <span class="location-badge"><i class="fa-solid fa-location-dot"></i> Kolhapur, India</span>
+              </div>
+              <ul class="experience-details">
+                <li>Developed a real-time smart video processing system integrating 15+ CCTV feeds. Leveraged Python and OpenCV running at 30 FPS with optimized multi-threaded frames capture, reducing physical surveillance workload by 70%.</li>
+                <li>Achieved a threat detection/intrusion accuracy of <strong>90.6%</strong> using fine-tuned computer vision scripts.</li>
+                <li>Built a lightweight backend microservice for automated alert generation and security logs, designing the comprehensive network architecture for integration into existing airport physical security servers.</li>
+              </ul>
+              <div class="tech-badges">
+                <span>Python</span>
+                <span>OpenCV</span>
+                <span>Multithreading</span>
+                <span>Data Flow Diagrams</span>
+                <span>Alerting Engine</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">June 2024 – August 2024</div>
+            <div class="timeline-content card-hover">
+              <div class="experience-role-header">
+                <div>
+                  <h3 class="role-title">Software Development Intern</h3>
+                  <span class="company-name"><i class="fa-solid fa-building"></i> Softech Solutions Pvt. Ltd.</span>
+                </div>
+                <span class="location-badge"><i class="fa-solid fa-location-dot"></i> Kolhapur, India</span>
+              </div>
+              <ul class="experience-details">
+                <li>Developed a database-driven inventory management system; engineered optimized SQL queries for validation, reducing manual workload by 35% and improving operational efficiency by 25%.</li>
+                <li>Wrote and executed extensive unit and integration tests; analyzed system defects and resolved bugs to increase code reliability, cutting data entry errors by 60%.</li>
+                <li>Prepared thorough technical documentation, API specifications, and workflow diagrams for bugs, fixes, and inventory models.</li>
+              </ul>
+              <div class="tech-badges">
+                <span>SQL</span>
+                <span>Java</span>
+                <span>Unit Testing</span>
+                <span>Git</span>
+                <span>Technical Documentation</span>
+                <span>Bug Debugging</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section section-padding" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle-badge">Portfolio Showcase</span>
+          <h2 class="section-title">Key Projects</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="backend">Backend & Systems</button>
+          <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- Project 1: ProHomeCare -->
+          <div class="project-card" data-category="fullstack">
+            <div class="project-header">
+              <span class="project-category"><i class="fa-solid fa-house-laptop"></i> Full Stack</span>
+              <div class="project-links">
+                <a href="https://github.com/Shravankotagi" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ProHomeCare — On-Demand Services</h3>
+              <p class="project-desc">Architected full-stack on-demand home service marketplace application with dynamic provider dispatch, WebSocket chats, and auto-scaling capabilities.</p>
+              <ul class="project-highlights">
+                <li>Optimized MongoDB schemas, resulting in <strong>sub-100ms queries</strong>.</li>
+                <li>Redis caching layers reduced database load by <strong>45%</strong> and improved API response speeds by <strong>60%</strong>.</li>
+                <li>Integrated Socket.io notifications (50+ active connections) and Razorpay checkout engine.</li>
+              </ul>
+            </div>
+            <div class="project-tech-tags">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+              <span>Redis</span>
+              <span>Socket.io</span>
+              <span>React</span>
+            </div>
+          </div>
+
+          <!-- Project 2: PDF RAG Chatbot -->
+          <div class="project-card" data-category="ai-ml">
+            <div class="project-header">
+              <span class="project-category"><i class="fa-solid fa-brain"></i> AI & ML</span>
+              <div class="project-links">
+                <a href="https://github.com/Shravankotagi" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">PDF RAG Chatbot — Q&A System</h3>
+              <p class="project-desc">Built an end-to-end Retrieval-Augmented Generation pipeline to answer questions based on custom uploaded PDF documents using semantic vector matching.</p>
+              <ul class="project-highlights">
+                <li>Integrated <strong>Google Gemini API</strong> and LangChain to generate context-aware answers with source citations.</li>
+                <li>Designed an optimized chunking and retrieval search pipeline utilizing <strong>FAISS and Pinecone</strong>.</li>
+                <li>Implemented a beautiful frontend UI in <strong>Streamlit</strong> supporting clean document indexing and multiple file uploads.</li>
+              </ul>
+            </div>
+            <div class="project-tech-tags">
+              <span>Python</span>
+              <span>LangChain</span>
+              <span>Gemini API</span>
+              <span>FAISS</span>
+              <span>Pinecone</span>
+              <span>Streamlit</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Finance Management System -->
+          <div class="project-card" data-category="backend">
+            <div class="project-header">
+              <span class="project-category"><i class="fa-solid fa-wallet"></i> Backend & Systems</span>
+              <div class="project-links">
+                <a href="https://github.com/Shravankotagi" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Finance Management System</h3>
+              <p class="project-desc">Engineered a secure backend financial reporting and ledger management system with robust authentication and microservices layout.</p>
+              <ul class="project-highlights">
+                <li>Developed web endpoints using <strong>Spring Boot</strong> and <strong>Spring Security</strong> for persistent financial reporting.</li>
+                <li>Implemented secure <strong>JWT Authentication</strong> and Role-Based Access Controls to secure sensitive routes.</li>
+                <li>Applied strict <strong>SOLID principles</strong> and unit/integration testing for end-to-end platform stability.</li>
+              </ul>
+            </div>
+            <div class="project-tech-tags">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>Spring Security</span>
+              <span>MySQL</span>
+              <span>RESTful APIs</span>
+            </div>
+          </div>
+
+          <!-- Project 4: E-Governance Management System -->
+          <div class="project-card" data-category="backend">
+            <div class="project-header">
+              <span class="project-category"><i class="fa-solid fa-landmark"></i> Backend & Systems</span>
+              <div class="project-badge text-warning"><i class="fa-solid fa-trophy"></i> Hackathon Winner</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">E-Governance Management System</h3>
+              <p class="project-desc">A highly scalable civic issue tracking and resolution system built for municipal bodies, handling role-based routing and automated communications.</p>
+              <ul class="project-highlights">
+                <li>Designed role-based access controls for Citizens, Officers, and Admins; handling <strong>1,000+ daily transactions</strong>.</li>
+                <li>Automated SQL aggregations power an analytics dashboard showcasing issues by ward.</li>
+                <li>Integrated SMTP email dispatch engines that decreased follow-up support requests by <strong>40%</strong>.</li>
+              </ul>
+            </div>
+            <div class="project-tech-tags">
+              <span>Java Servlets</span>
+              <span>MySQL</span>
+              <span>RESTful APIs</span>
+              <span>Normalized Database</span>
+            </div>
+          </div>
+
+          <!-- Project 5: Exhibit Monitor -->
+          <div class="project-card" data-category="backend">
+            <div class="project-header">
+              <span class="project-category"><i class="fa-solid fa-microchip"></i> Backend & Systems</span>
+              <div class="project-badge text-info"><i class="fa-solid fa-code-fork"></i> Zensar Hackathon</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Exhibit Monitor — File Processing</h3>
+              <p class="project-desc">Multithreaded file monitoring backend designed to watch directories, parse high-volume files, perform validations, and log audits.</p>
+              <ul class="project-highlights">
+                <li>Handles ingestion of 100+ large data files daily, scaling to support file sizes up to <strong>10 GB</strong>.</li>
+                <li>Thread-pool architectures optimized I/O operations, cutting file processing times by <strong>50%</strong>.</li>
+                <li>Engineered validation checks utilizing memory-mapped HashMaps to flag duplicate inputs instantly.</li>
+              </ul>
+            </div>
+            <div class="project-tech-tags">
+              <span>Java</span>
+              <span>Multithreading</span>
+              <span>Log4j</span>
+              <span>JSON Configs</span>
+              <span>File I/O</span>
+            </div>
+          </div>
+
+          <!-- Project 6: ZKP-Verified Iris Biometric System -->
+          <div class="project-card" data-category="ai-ml">
+            <div class="project-header">
+              <span class="project-category"><i class="fa-solid fa-eye"></i> AI & ML</span>
+              <div class="project-links">
+                <a href="https://github.com/Shravankotagi" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="GitHub Repository"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">ZKP-Verified Iris Biometric System</h3>
+              <p class="project-desc">A privacy-preserving biometrics authentication platform performing zero-knowledge verification over high-volume eye samples.</p>
+              <ul class="project-highlights">
+                <li>Processed and authenticated a dataset of <strong>50,000+ iris samples</strong>.</li>
+                <li>Improved verification precision to <strong>97.8%</strong> via automated hyperparameter tuning.</li>
+                <li>Optimized computer vision pipelines using <strong>TensorFlow</strong> and <strong>OpenCV</strong>, reducing response delays by <strong>35%</strong>.</li>
+              </ul>
+            </div>
+            <div class="project-tech-tags">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>OpenCV</span>
+              <span>Flask</span>
+              <span>Verification Pipeline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive AI Assistant Section -->
+    <section class="ai-scribe-section section-padding" id="ai-scribe">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle-badge"><i class="fa-solid fa-robot"></i> Interactive Agent</span>
+          <h2 class="section-title">Resume AI Assistant</h2>
+          <p class="section-subtitle-description">Interact with a mock AI Scribe that answers recruiter questions instantly based on Shravan's background and resume data.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="ai-chat-container">
+          <div class="ai-chat-header">
+            <div class="bot-info">
+              <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+              <div>
+                <h4>Shravan's AI Scribe</h4>
+                <p class="bot-status"><span class="status-dot"></span> Online & Ready to Answer</p>
+              </div>
+            </div>
+            <button class="chat-clear-btn" id="chat-clear-btn" title="Clear Chat history"><i class="fa-solid fa-rotate-left"></i></button>
+          </div>
+
+          <div class="ai-chat-body" id="chat-body">
+            <!-- Messages will be injected here dynamically -->
+            <div class="chat-message bot">
+              <div class="msg-bubble">
+                Hello! I am Shravan's AI assistant, loaded with facts about his skills, experience, and accomplishments. What would you like to know about Shravan?
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-suggestions">
+            <button class="suggest-chip" data-question="What are Shravan's core skills?">What are his skills?</button>
+            <button class="suggest-chip" data-question="Tell me about his internship at Enlight Lab.">Enlight Lab Intern experience?</button>
+            <button class="suggest-chip" data-question="Has he won any hackathons?">Did he win any hackathons?</button>
+            <button class="suggest-chip" data-question="What is his contact information?">How do I contact him?</button>
+          </div>
+
+          <form class="ai-chat-input" id="chat-form">
+            <input type="text" id="chat-input-text" autocomplete="off" placeholder="Ask about skills, projects, hackathons..." aria-label="Question for Shravan's AI Scribe">
+            <button type="submit" class="chat-submit-btn" aria-label="Send question"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="subtitle-badge">Get In Touch</span>
+          <h2 class="section-title">Contact Me</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Details Card -->
+          <div class="contact-info-card">
+            <h3>Let's build something exceptional!</h3>
+            <p>I am seeking a Backend Engineering Intern role or AI Engineer role. Drop me a line, and I will get back to you within 24 hours.</p>
+            
+            <div class="contact-details-list">
+              <div class="contact-item">
+                <div class="contact-icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="detail-label">Email Me</span>
+                  <a href="mailto:shravankotagi314@gmail.com" class="detail-value">shravankotagi314@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon-circle"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <span class="detail-label">Call / WhatsApp</span>
+                  <a href="tel:+918262937458" class="detail-value">+91 8262937458</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value">Kolhapur, Maharashtra 416005, India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-circles">
+              <a href="https://linkedin.com/in/shravankotagi" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://github.com/Shravankotagi" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="contact-form-card">
+            <form id="portfolio-contact-form" novalidate>
+              <div class="form-group">
+                <input type="text" id="form-name" required placeholder=" " class="form-control">
+                <label for="form-name" class="form-label">Full Name</label>
+                <span class="error-msg" id="name-error">Please enter your name</span>
+              </div>
+              
+              <div class="form-group">
+                <input type="email" id="form-email" required placeholder=" " class="form-control">
+                <label for="form-email" class="form-label">Email Address</label>
+                <span class="error-msg" id="email-error">Please enter a valid email</span>
+              </div>
+
+              <div class="form-group">
+                <input type="text" id="form-subject" required placeholder=" " class="form-control">
+                <label for="form-subject" class="form-label">Subject</label>
+                <span class="error-msg" id="subject-error">Please enter a subject</span>
+              </div>
+
+              <div class="form-group">
+                <textarea id="form-message" required placeholder=" " class="form-control textarea" rows="4"></textarea>
+                <label for="form-message" class="form-label">Message Details</label>
+                <span class="error-msg" id="message-error">Please enter your message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block submit-btn" id="submit-btn">
+                <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="#" class="logo-text">&lt;/&gt; Shravan<span class="highlight">.</span></a>
+        <p class="footer-tagline">Scaling architectures, deploying intelligence.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <p class="copyright">&copy; 2026 Shravan Kotagi. All rights reserved.</p>
+        <p class="design-credit">Designed for HR Recruitment excellence</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
