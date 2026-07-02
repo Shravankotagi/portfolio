@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+README_airediness.md
+README_carescribe.md
+README_enlightwidget.md
+README_PRDcreator.md
+Readme_RAGChatbot.md
+README_TechStackAuditor.md
+README_voiceagents.md
