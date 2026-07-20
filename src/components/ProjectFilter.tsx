@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 interface Project {
   id: string;
@@ -23,6 +24,22 @@ interface Project {
 export default function ProjectFilter() {
   const [filter, setFilter] = useState<'all' | 'backend' | 'ai-ml' | 'fullstack'>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   const projects: Project[] = [
     {
@@ -334,10 +351,10 @@ export default function ProjectFilter() {
       </div>
 
       {/* Modal Popup Overlay */}
-      {selectedProject && (
+      {mounted && selectedProject && createPortal(
         <div className="project-modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="project-modal-close" onClick={() => setSelectedProject(null)}>
+            <button className="project-modal-close" onClick={() => setSelectedProject(null)} aria-label="Close modal">
               <i className="fa-solid fa-xmark"></i>
             </button>
             
@@ -414,7 +431,8 @@ export default function ProjectFilter() {
               </button>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

@@ -58,6 +58,23 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll-reveal: fade-in sections as they enter the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   // Toast handlers
   const showToast = (message: string, type: 'success' | 'error' = 'success') => {
     setToast({ message, type });
@@ -283,7 +300,7 @@ export default function Home() {
         </section>
 
         {/* Metrics Section */}
-        <section className="metrics-section">
+        <section className="metrics-section reveal">
           <div className="container grid-4">
             <div className="metric-item card-hover">
               <div className="metric-number">6+</div>
@@ -305,7 +322,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section className="about-section section-padding" id="about">
+        <section className="about-section section-padding reveal" id="about">
           <div className="container">
             <div className="section-header">
               <span className="subtitle-badge">My Story</span>
@@ -386,7 +403,7 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section className="skills-section section-padding" id="skills">
+        <section className="skills-section section-padding reveal" id="skills">
           <div className="container">
             <div className="section-header">
               <span className="subtitle-badge">Stack & Tools</span>
@@ -523,7 +540,7 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section className="experience-section section-padding" id="experience">
+        <section className="experience-section section-padding reveal" id="experience">
           <div className="container">
             <div className="section-header">
               <span className="subtitle-badge">Timeline</span>
@@ -653,7 +670,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section className="projects-section section-padding" id="projects">
+        <section className="projects-section section-padding reveal" id="projects">
           <div className="container">
             <div className="section-header">
               <span className="subtitle-badge">Portfolio Showcase</span>
@@ -665,7 +682,7 @@ export default function Home() {
         </section>
 
         {/* AI Scribe Section */}
-        <section className="ai-scribe-section section-padding" id="ai-scribe">
+        <section className="ai-scribe-section section-padding reveal" id="ai-scribe">
           <div className="container">
             <div className="section-header">
               <span className="subtitle-badge">
@@ -682,7 +699,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="contact-section section-padding" id="contact">
+        <section className="contact-section section-padding reveal" id="contact">
           <div className="container">
             <div className="section-header">
               <span className="subtitle-badge">Get In Touch</span>
