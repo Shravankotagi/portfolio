@@ -5,6 +5,47 @@ import NeuralCanvas from '@/components/NeuralCanvas';
 import Typewriter from '@/components/Typewriter';
 import ProjectFilter from '@/components/ProjectFilter';
 import AIAssistant from '@/components/AIAssistant';
+// Animated Counter Component
+function CounterNumber({ endValue, suffix = '', decimals = 0 }: { endValue: number; suffix?: string; decimals?: number }) {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = React.useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          let startTime: number | null = null;
+          const duration = 1800; // 1.8s duration
+
+          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            // Ease out cubic
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            setCount(easeOut * endValue);
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [endValue, hasAnimated]);
+
+  return (
+    <span ref={ref}>
+      {count.toFixed(decimals)}{suffix}
+    </span>
+  );
+}
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -303,20 +344,28 @@ export default function Home() {
         <section className="metrics-section reveal">
           <div className="container grid-4">
             <div className="metric-item card-hover">
-              <div className="metric-number">6+</div>
-              <div className="metric-label">AI Products Built</div>
+              <div className="metric-number">
+                <CounterNumber endValue={6} suffix="+" />
+              </div>
+              <div className="metric-label">AI Products Built & Deployed</div>
             </div>
             <div className="metric-item card-hover">
-              <div className="metric-number">50%</div>
-              <div className="metric-label">Processing Time Cut</div>
+              <div className="metric-number">
+                <CounterNumber endValue={70} suffix="%" />
+              </div>
+              <div className="metric-label">Surveillance Workload Cut</div>
             </div>
             <div className="metric-item card-hover">
-              <div className="metric-number">97.8%</div>
-              <div className="metric-label">Verification Precision</div>
+              <div className="metric-number">
+                <CounterNumber endValue={90.6} suffix="%" decimals={1} />
+              </div>
+              <div className="metric-label">Threat Detection Accuracy</div>
             </div>
             <div className="metric-item card-hover">
-              <div className="metric-number">2x</div>
-              <div className="metric-label">Hackathon Competitor</div>
+              <div className="metric-number">
+                <CounterNumber endValue={45} suffix="%" />
+              </div>
+              <div className="metric-label">Database Load Cut via Redis</div>
             </div>
           </div>
         </section>
@@ -779,6 +828,19 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Floating Quick Action Pill */}
+      <div className="floating-quick-dock">
+        <a href="#ai-scribe" className="dock-btn" title="Ask AI Scribe Assistant">
+          <i className="fa-solid fa-robot"></i> <span>Ask AI Scribe</span>
+        </a>
+        <button onClick={handleResumePrint} className="dock-btn primary" title="Get Resume">
+          <i className="fa-solid fa-file-pdf"></i> <span>Resume</span>
+        </button>
+        <a href="mailto:shravankotagi314@gmail.com" className="dock-btn" title="Email Shravan">
+          <i className="fa-regular fa-paper-plane"></i> <span>Hire Me</span>
+        </a>
+      </div>
     </>
   );
 }

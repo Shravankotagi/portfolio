@@ -1979,15 +1979,38 @@ button {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 40px;
+    font-size: 34px;
+    line-height: 1.25;
   }
   
   .hero-subtitle {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
   }
   
   .grid-4 {
     grid-template-columns: 1fr;
+  }
+
+  .filter-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .project-header {
+    flex-wrap: wrap;
+    gap: 8px;
   }
   
   .bio-info-grid {
@@ -1999,7 +2022,7 @@ button {
   }
 
   .ai-chat-body {
-    padding: 16px;
+    padding: 14px;
   }
   
   .ai-chat-container {
@@ -2424,16 +2447,217 @@ button {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* Card Interaction Upgrades */
+/* Card Interaction Upgrades & Glowing Hover Effects */
 .project-card {
   cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(111, 76, 255, 0.12), 0 4px 12px rgba(0, 201, 167, 0.08);
+  border-color: rgba(111, 76, 255, 0.4);
+}
+
+.skill-category-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(111, 76, 255, 0.09);
+  border-color: rgba(111, 76, 255, 0.3);
+}
+
+.metric-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 201, 167, 0.12);
+}
+
+/* ==========================================================================
+   PROJECT STATUS BADGES
+   ========================================================================== */
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  margin-left: 8px;
+}
+
+.project-status-badge.shipped {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.project-status-badge.live {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4f46e5;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.project-status-badge.winner {
+  background: rgba(245, 158, 11, 0.14);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+/* ==========================================================================
+   COLOR-CODED SKILL TAGS
+   ========================================================================== */
+.skill-tag {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.skill-tag i.devicon-java-plain,
+.skill-tag i.devicon-spring-original {
+  color: #6db33f !important;
+}
+
+.skill-tag i.devicon-python-plain {
+  color: #3776ab !important;
+}
+
+.skill-tag i.devicon-nodejs-plain {
+  color: #339933 !important;
+}
+
+.skill-tag i.devicon-express-original {
+  color: #000000 !important;
+}
+
+.skill-tag i.devicon-react-original {
+  color: #61dafb !important;
+}
+
+.skill-tag i.devicon-nextjs-original-wordmark {
+  color: #000000 !important;
+}
+
+.skill-tag i.devicon-mongodb-plain {
+  color: #47a248 !important;
+}
+
+.skill-tag i.devicon-postgresql-plain {
+  color: #4169e1 !important;
+}
+
+.skill-tag i.devicon-redis-plain {
+  color: #dc382d !important;
+}
+
+.skill-tag i.devicon-docker-plain {
+  color: #2496ed !important;
+}
+
+.skill-tag i.devicon-amazonwebservices-original {
+  color: #ff9900 !important;
+}
+
+/* ==========================================================================
+   FLOATING QUICK ACTION DOCK
+   ========================================================================== */
+.floating-quick-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 40px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  z-index: 9000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-quick-dock:hover {
+  box-shadow: 0 16px 40px rgba(111, 76, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.dock-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.dock-btn:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.dock-btn.primary {
+  background: var(--accent-gradient);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(111, 76, 255, 0.25);
+}
+
+.dock-btn.primary:hover {
+  background: var(--accent-gradient-hover);
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .floating-quick-dock {
+    bottom: 16px;
+    right: 16px;
+    padding: 4px 6px;
+  }
+  .dock-btn span {
+    display: none;
+  }
+  .dock-btn {
+    padding: 10px;
+    border-radius: 50%;
+  }
 }
 
 @media (max-width: 768px) {

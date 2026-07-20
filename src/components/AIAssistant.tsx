@@ -112,7 +112,7 @@ export default function AIAssistant() {
     
     relocation: `Yes, Shravan Kotagi is fully open to relocating for full-time backend or AI engineering roles, and is highly adaptable to hybrid/remote work setups.`,
 
-    carescribe: `<strong>CareScribe — AI Clinical Assistant</strong> is an ambient scribe system built by Shravan. Key features:<br>
+    carescribe: `<strong>CareScribe- AI Clinical Assistant</strong> is an ambient scribe system built by Shravan. Key features:<br>
                  • Transcribes consults with speaker labels using AssemblyAI/Whisper.<br>
                  • Dynamically structures SOAP clinical notes and extracts ICD-10/CPT coding with Gemini 2.5 Flash.<br>
                  • Built with Next.js 16, Prisma ORM, Neon cloud PostgreSQL, and Better Auth.`,

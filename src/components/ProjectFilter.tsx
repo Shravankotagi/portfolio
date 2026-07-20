@@ -9,6 +9,7 @@ interface Project {
   category: 'backend' | 'ai-ml' | 'fullstack';
   categoryLabel: string;
   categoryIcon: string;
+  badge?: { text: string; icon: string; style: 'shipped' | 'winner' | 'live' };
   description: string; // Short intro
   detailedExplanation: {
     overview: string;
@@ -44,10 +45,11 @@ export default function ProjectFilter() {
   const projects: Project[] = [
     {
       id: 'carescribe',
-      title: 'CareScribe — AI Clinical Assistant',
+      title: 'CareScribe- AI Clinical Assistant',
       category: 'fullstack',
       categoryLabel: 'Full Stack / AI Scribe',
       categoryIcon: 'fa-solid fa-house-laptop',
+      badge: { text: 'Production Ready', icon: 'fa-solid fa-circle-check', style: 'shipped' },
       description: 'Ambient AI clinical scribe recording consultations, transcribing with speaker labels, generating SOAP notes, and exporting to EHR systems in one click.',
       detailedExplanation: {
         overview: 'CareScribe is an ambient AI documentation assistant designed for clinical settings. It records conversation audio between doctors and patients, transcribes it with speaker turn labels, automatically drafts structured medical SOAP notes, extracts billing codes, and exports everything to Electronic Health Records (EHR) using the FHIR R4 standard.',
@@ -78,10 +80,11 @@ export default function ProjectFilter() {
     },
     {
       id: 'voiceagents',
-      title: 'Enlight AI — 18 Autonomous Voice Agents',
+      title: 'Enlight AI- 18 Autonomous Voice Agents',
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
+      badge: { text: '18 Voice Bots Live', icon: 'fa-solid fa-headset', style: 'live' },
       description: 'Production-grade voice agent platform built on Retell AI and WebRTC running 18 real-world business workflows without human intervention.',
       detailedExplanation: {
         overview: 'Enlight AI is an autonomous, end-to-end voice agent platform. It utilizes the Retell AI engine and low-latency WebRTC streams to deploy 18 specialized telephone voice agents carrying out complex, multi-turn business workflows (like hotel check-out extensions, abandoned cart recovery, symptom triages, and claim processing).',
@@ -104,10 +107,11 @@ export default function ProjectFilter() {
     },
     {
       id: 'prd-creator',
-      title: 'PRD Creator — AI Document Generator',
+      title: 'PRD Creator- AI Document Generator',
       category: 'fullstack',
       categoryLabel: 'Full Stack / AI Tool',
       categoryIcon: 'fa-solid fa-house-laptop',
+      
       description: 'AI-powered Product Requirement Document (PRD) generator that guides users through a conversational intake process to translate requirements into engineering-ready specs.',
       detailedExplanation: {
         overview: 'PRD Creator is a full-stack SaaS application built to translate unstructured business ideas into comprehensive, detailed Product Requirement Documents (PRDs). Users are guided through a structured conversational form, and the system outputs fully articulated requirements, user stories, acceptance criteria, roadmaps, and edge cases.',
@@ -133,7 +137,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'ai-readiness',
-      title: 'AI Readiness Scorecard — Enlight Lab',
+      title: 'AI Readiness Scorecard- Enlight Lab',
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
@@ -165,7 +169,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'tech-stack-auditor',
-      title: 'Tech Stack Auditor — Enlight Lab',
+      title: 'Tech Stack Auditor- Enlight Lab',
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
@@ -198,7 +202,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'voice-widget',
-      title: 'AI Assistant & Voice Widget — Enlight Lab',
+      title: 'AI Assistant & Voice Widget- Enlight Lab',
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
@@ -226,7 +230,7 @@ export default function ProjectFilter() {
     
     {
       id: 'prohomecare',
-      title: 'ProHomeCare — On-Demand Services',
+      title: 'ProHomeCare- On-Demand Services',
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
@@ -253,7 +257,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'rag-chatbot',
-      title: 'PDF RAG Chatbot — Q&A System',
+      title: 'PDF RAG Chatbot- Q&A System',
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
@@ -320,6 +324,11 @@ export default function ProjectFilter() {
               <span className="project-category">
                 <i className={`${project.categoryIcon} mr-1`}></i> {project.categoryLabel}
               </span>
+              {project.badge && (
+                <span className={`project-status-badge ${project.badge.style}`}>
+                  <i className={project.badge.icon}></i> {project.badge.text}
+                </span>
+              )}
               {project.githubUrl && (
                 <div className="project-links" onClick={(e) => e.stopPropagation()}>
                   <a 
@@ -386,24 +395,26 @@ export default function ProjectFilter() {
               {selectedProject.detailedExplanation.apiEndpoints && (
                 <>
                   <h4>Key API Endpoints</h4>
-                  <table className="project-endpoints-table" style={{ width: '100%', borderCollapse: 'collapse', marginTop: '12px', fontSize: '13px' }}>
-                    <thead>
-                      <tr style={{ borderBottom: '1px solid var(--border-default)', textAlign: 'left', color: 'var(--primary)' }}>
-                        <th style={{ padding: '8px' }}>Method</th>
-                        <th style={{ padding: '8px' }}>Path</th>
-                        <th style={{ padding: '8px' }}>Purpose</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {selectedProject.detailedExplanation.apiEndpoints.map((ep, idx) => (
-                        <tr key={idx} style={{ borderBottom: '1px solid rgba(226,232,240,0.5)' }}>
-                          <td style={{ padding: '8px', fontWeight: 'bold' }}><code>{ep.method}</code></td>
-                          <td style={{ padding: '8px' }}><code>{ep.path}</code></td>
-                          <td style={{ padding: '8px', color: 'var(--muted)' }}>{ep.purpose}</td>
+                  <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
+                    <table className="project-endpoints-table" style={{ width: '100%', minWidth: '460px', borderCollapse: 'collapse', marginTop: '12px', fontSize: '13px' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '1px solid var(--border-default)', textAlign: 'left', color: 'var(--primary)' }}>
+                          <th style={{ padding: '8px' }}>Method</th>
+                          <th style={{ padding: '8px' }}>Path</th>
+                          <th style={{ padding: '8px' }}>Purpose</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {selectedProject.detailedExplanation.apiEndpoints.map((ep, idx) => (
+                          <tr key={idx} style={{ borderBottom: '1px solid rgba(226,232,240,0.5)' }}>
+                            <td style={{ padding: '8px', fontWeight: 'bold' }}><code>{ep.method}</code></td>
+                            <td style={{ padding: '8px' }}><code>{ep.path}</code></td>
+                            <td style={{ padding: '8px', color: 'var(--muted)' }}>{ep.purpose}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </>
               )}
 
