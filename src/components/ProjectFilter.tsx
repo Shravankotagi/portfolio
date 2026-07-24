@@ -10,6 +10,7 @@ interface Project {
   categoryLabel: string;
   categoryIcon: string;
   badge?: { text: string; icon: string; style: 'shipped' | 'winner' | 'live' };
+  image: string;
   description: string; // Short intro
   detailedExplanation: {
     overview: string;
@@ -50,6 +51,7 @@ export default function ProjectFilter() {
       categoryLabel: 'Full Stack / AI Scribe',
       categoryIcon: 'fa-solid fa-house-laptop',
       badge: { text: 'Production Ready', icon: 'fa-solid fa-circle-check', style: 'shipped' },
+      image: '/images/projects/carescribe.jpg',
       description: 'Ambient AI clinical scribe recording consultations, transcribing with speaker labels, generating SOAP notes, and exporting to EHR systems in one click.',
       detailedExplanation: {
         overview: 'ClinicalScribe is an ambient AI documentation assistant designed for clinical settings. It records conversation audio between doctors and patients, transcribes it with speaker turn labels, automatically drafts structured medical SOAP notes, extracts billing codes, and exports everything to Electronic Health Records (EHR) using the FHIR R4 standard.',
@@ -85,6 +87,7 @@ export default function ProjectFilter() {
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
       badge: { text: '18 Voice Bots Live', icon: 'fa-solid fa-headset', style: 'live' },
+      image: '/images/projects/voice-agents.jpg',
       description: 'Production-grade voice agent platform built on Retell AI and WebRTC running 18 real-world business workflows without human intervention.',
       detailedExplanation: {
         overview: 'Enlight AI is an autonomous, end-to-end voice agent platform. It utilizes the Retell AI engine and low-latency WebRTC streams to deploy 18 specialized telephone voice agents carrying out complex, multi-turn business workflows (like hotel check-out extensions, abandoned cart recovery, symptom triages, and claim processing).',
@@ -111,7 +114,8 @@ export default function ProjectFilter() {
       category: 'fullstack',
       categoryLabel: 'Full Stack / AI Tool',
       categoryIcon: 'fa-solid fa-house-laptop',
-      
+      badge: { text: 'Shipped', icon: 'fa-solid fa-truck-ramp-box', style: 'shipped' },
+      image: '/images/projects/prd-creator.jpg',
       description: 'AI-powered Product Requirement Document (PRD) generator that guides users through a conversational intake process to translate requirements into engineering-ready specs.',
       detailedExplanation: {
         overview: 'PRD Creator is a full-stack SaaS application built to translate unstructured business ideas into comprehensive, detailed Product Requirement Documents (PRDs). Users are guided through a structured conversational form, and the system outputs fully articulated requirements, user stories, acceptance criteria, roadmaps, and edge cases.',
@@ -141,6 +145,8 @@ export default function ProjectFilter() {
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
+      badge: { text: 'Lead Gen Live', icon: 'fa-solid fa-bullseye', style: 'live' },
+      image: '/images/projects/ai-readiness.jpg',
       description: 'A free, public lead generation tool that helps CTOs and engineering leaders understand how AI-ready their company is through a 12-question maturity scorecard.',
       detailedExplanation: {
         overview: 'This tool assesses companies on AI adoption metrics across 4 business dimensions. It calculates a score out of 100, assigns a maturity tier, generates dynamic action guides, locks results behind an email gate, and syncs leads directly to HubSpot CRM and Supabase.',
@@ -173,6 +179,8 @@ export default function ProjectFilter() {
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
+      badge: { text: 'Auditor Tool', icon: 'fa-solid fa-shield-halved', style: 'shipped' },
+      image: '/images/projects/tech-stack-auditor.jpg',
       description: 'AI-powered evaluation tool that helps engineering managers instantly audit the health and risks of their technology stack based on descriptions.',
       detailedExplanation: {
         overview: 'Tech Stack Auditor evaluates user-submitted tech stack details across 5 key pillars (Scalability, Observability, Security, CI/CD, and Data). It provides clear risk assessments and saves results with unique shareable links, while leveraging rate-limiting and email-delivery integrations.',
@@ -206,6 +214,8 @@ export default function ProjectFilter() {
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
+      badge: { text: 'Widget Live', icon: 'fa-solid fa-code-commit', style: 'live' },
+      image: '/images/projects/voice-widget.jpg',
       description: 'Embeddable website widget combining a RAG-powered Gemini chat assistant and a real-time voice call assistant powered by Retell AI.',
       detailedExplanation: {
         overview: 'This widget combines two modes of AI communication. The chat interface performs semantic search (RAG) over a structured corporate knowledge base, and the voice button dials an interactive Retell AI agent over WebRTC. Captures visitor details dynamically and logs them to CRM platforms.',
@@ -227,13 +237,14 @@ export default function ProjectFilter() {
       techTags: ['Next.js', 'Gemini API', 'Retell WebRTC SDK', 'HubSpot', 'WebRTC'],
       githubUrl: 'https://github.com/Shravankotagi/enlightlab-widget'
     },
-    
     {
       id: 'prohomecare',
       title: 'ProHomeCare- On-Demand Services',
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
+      badge: { text: 'Marketplace', icon: 'fa-solid fa-shop', style: 'shipped' },
+      image: '/images/projects/prohomecare.jpg',
       description: 'Architected full-stack on-demand home service marketplace application with dynamic provider dispatch, WebSocket chats, and auto-scaling capabilities.',
       detailedExplanation: {
         overview: 'ProHomeCare is a home service marketplace platform. It allows users to book verified home maintenance service providers dynamically, supporting real-time chat overlays, transaction processors, and load-balanced servers.',
@@ -261,6 +272,8 @@ export default function ProjectFilter() {
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
+      badge: { text: 'Core RAG Tool', icon: 'fa-solid fa-folder-tree', style: 'winner' },
+      image: '/images/projects/pdf-rag.jpg',
       description: 'Built an end-to-end Retrieval-Augmented Generation pipeline to answer questions based on custom uploaded PDF documents using semantic vector matching.',
       detailedExplanation: {
         overview: 'A Python-based RAG application that allows users to upload PDF documents, splits the content, indexes it into vector stores, and performs semantic search to answer user queries with grounded citations.',
@@ -318,42 +331,69 @@ export default function ProjectFilter() {
           <div 
             key={project.id} 
             className="project-card"
+            style={{ display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
             onClick={() => setSelectedProject(project)}
           >
-            <div className="project-header">
-              <span className="project-category">
-                <i className={`${project.categoryIcon} mr-1`}></i> {project.categoryLabel}
-              </span>
+            {/* Project Image Banner Header */}
+            <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden', backgroundColor: 'var(--bg-secondary)' }}>
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
+                onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+              />
+              
+              {/* Badge Overlays on Image */}
               {project.badge && (
-                <span className={`project-status-badge ${project.badge.style}`}>
+                <span className={`project-status-badge ${project.badge.style}`} style={{ position: 'absolute', top: '12px', left: '12px', zIndex: 10 }}>
                   <i className={project.badge.icon}></i> {project.badge.text}
                 </span>
               )}
+              
               {project.githubUrl && (
-                <div className="project-links" onClick={(e) => e.stopPropagation()}>
+                <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }} onClick={(e) => e.stopPropagation()}>
                   <a 
                     href={project.githubUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="project-link" 
+                    className="project-link"
+                    style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'rgba(0,0,0,0.6)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'background-color 0.2s' }}
+                    onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.85)'; }}
+                    onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.6)'; }}
                     aria-label={`${project.title} GitHub Repository`}
                   >
-                    <i className="fa-brands fa-github"></i>
+                    <i className="fa-brands fa-github" style={{ fontSize: '15px' }}></i>
                   </a>
                 </div>
               )}
             </div>
-            <div className="project-body">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-desc">{project.description}</p>
-              <div style={{ marginTop: '16px', color: 'var(--primary)', fontWeight: '600', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                View Full Project Details <i className="fa-solid fa-circle-arrow-right"></i>
+
+            {/* Project Body */}
+            <div className="project-body" style={{ display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between' }}>
+              <div>
+                <span className="project-category" style={{ marginBottom: '8px' }}>
+                  <i className={`${project.categoryIcon} mr-1`}></i> {project.categoryLabel}
+                </span>
+                <h3 className="project-title" style={{ marginTop: '4px' }}>{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
               </div>
-            </div>
-            <div className="project-tech-tags">
-              {project.techTags.map(tag => (
-                <span key={tag}>{tag}</span>
-              ))}
+
+              <div>
+                {/* Tech Tags */}
+                <div className="project-tech-tags" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '16px', padding: 0, border: 'none' }}>
+                  {project.techTags.map(tag => (
+                    <span key={tag} style={{ fontSize: '10px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '4px 8px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-default)', borderRadius: '4px', color: 'var(--muted)' }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* View Details Link */}
+                <div style={{ marginTop: '16px', color: 'var(--primary)', fontWeight: '700', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  View Details <i className="fa-solid fa-arrow-right" style={{ fontSize: '10px' }}></i>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -368,6 +408,13 @@ export default function ProjectFilter() {
             </button>
             
             <div className="project-modal-header">
+              <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', borderRadius: '8px', marginBottom: '16px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-default)' }}>
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
               <span className="project-category">
                 <i className={`${selectedProject.categoryIcon} mr-1`}></i> {selectedProject.categoryLabel}
               </span>
