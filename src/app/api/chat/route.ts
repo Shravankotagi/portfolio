@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       • Cloud & DevOps: AWS (EC2, S3), Docker, Git/GitHub, CI/CD
       • AI Stack: LangChain, Gemini API, OpenAI Whisper, Retell AI, WebRTC, TensorFlow, PyTorch, OpenCV, FAISS, Pinecone
     - WORK EXPERIENCE:
-      • Independent AI Engineer / Freelancer (March – May 2025)
+      • AI Engineer Intern at Enlight Lab (March – May 2025)
         - Built ClinicalScribe (AI Clinical Scribe using Whisper + FastAPI + Next.js + Better Auth)
         - Created Enlight AI 18 Voice Agents platform (using Retell AI WebRTC SDK for 8 domains)
         - Built AI Readiness Scorecard (Quiz assessing lead maturity tier, syncing to HubSpot and Supabase)

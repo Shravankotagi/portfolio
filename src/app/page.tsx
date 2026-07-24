@@ -393,7 +393,7 @@ export default function Home() {
                   I am currently pursuing my <strong>Bachelor of Engineering in Computer Science</strong> with specialization in <strong>Artificial Intelligence & Machine Learning</strong> from Kolhapur Institute of Technology (CGPA: 7.5/10.00). My sweet spot lies at the intersection of robust backend engineering and modern generative AI technology.
                 </p>
                 <p className="about-paragraph">
-                  As an independent Software & AI Engineer, I acted as an autonomous builder, taking multiple end-to-end AI products (Voice Agents, Clinical Scribes, PRD Creator pipelines) from architectural design and database modeling to cloud deployment. I focus on developing systems that are not just smart, but highly performant, utilizing Redis caching, multithreaded workers, and streamlined database schemas to deliver responsive client experiences.
+                  During my recent internship at <strong>Enlight Lab</strong>, I acted as an autonomous builder, taking multiple end-to-end AI products (Voice Agents, Clinical Scribes, PRD Creator pipelines) from architectural design and database modeling to cloud deployment. I focus on developing systems that are not just smart, but highly performant, utilizing Redis caching, multithreaded workers, and streamlined database schemas to deliver responsive client experiences.
                 </p>
                 <div className="bio-info-grid">
                   <div className="bio-item">
@@ -612,9 +612,9 @@ export default function Home() {
                 <div className="timeline-content card-hover">
                   <div className="experience-role-header">
                     <div>
-                      <h3 className="role-title">Independent AI Engineer</h3>
+                      <h3 className="role-title">AI Engineer Intern</h3>
                       <span className="company-name">
-                        <i className="fa-solid fa-code"></i> Freelance & Contract
+                        <i className="fa-solid fa-building"></i> Enlight Lab
                       </span>
                     </div>
                     <span className="location-badge">

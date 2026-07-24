@@ -44,7 +44,7 @@ export default function AIAssistant() {
              • <strong>AI Frameworks & Stack:</strong> LangChain, Gemini API, OpenAI Whisper, Hugging Face, TensorFlow, PyTorch, OpenCV, YOLO, FAISS, Pinecone<br>
              • <strong>Development Practices:</strong> OOP, System Design, SDLC, Agile, Technical Documentation, Testing & Debugging`,
     
-    enlightlab: `Working as an Independent AI Engineer (March - May 2025), Shravan built and deployed multiple production products:<br>
+    enlightlab: `During his internship at <strong>Enlight Lab</strong> (March - May 2025), Shravan served as an AI Engineer Intern. He independently built and deployed multiple production products:<br>
                  1. <strong>18 Autonomous Voice Agents (Enlight AI)</strong>: Voice platform built with Retell AI WebRTC SDK.<br>
                  2. <strong>ClinicalScribe (AI Clinical Scribe)</strong>: Ambient scribe built using OpenAI Whisper + FastAPI backend + Next.js frontend.<br>
                  3. <strong>PRD Document Creator</strong>: Intake chatbot leveraging Next.js and the Gemini API.<br>
@@ -129,7 +129,7 @@ export default function AIAssistant() {
               • <strong>Commodities Market</strong>: Analyzing demand-supply cycles, USD strength, and trends for gold, silver, crude oil, and natural gas.<br>
               • <strong>Analysis Methods</strong>: Integrates fundamental statistics (P/E, D/E ratios, FCF) with technical charts (moving averages, support/resistance, trendlines) and strict risk-to-reward metrics.`,
 
-    default: `I can search Shravan's resume for anything! Try asking about his: <strong>skills</strong>, <strong>independent AI work</strong>, <strong>Airport CCTV project</strong>, <strong>Softech Solutions role</strong>, or specific projects like <strong>ClinicalScribe</strong>, <strong>Voice Agents</strong>, <strong>PDF RAG</strong>, <strong>ProHomeCare</strong>, <strong>Finance ledger</strong>, <strong>E-Governance</strong>, <strong>ZKP Iris Biometrics</strong>, <strong>Hackathons</strong>, <strong>Financial Markets</strong>, and <strong>Contact info</strong>.`
+    default: `I can search Shravan's resume for anything! Try asking about his: <strong>skills</strong>, <strong>Enlight Lab internship</strong>, <strong>Airport CCTV project</strong>, <strong>Softech Solutions role</strong>, or specific projects like <strong>CareScribe</strong>, <strong>Voice Agents</strong>, <strong>PDF RAG</strong>, <strong>ProHomeCare</strong>, <strong>Finance ledger</strong>, <strong>E-Governance</strong>, <strong>ZKP Iris Biometrics</strong>, <strong>Hackathons</strong>, <strong>Financial Markets</strong>, and <strong>Contact info</strong>.`
   };
 
   const corpus: Record<string, { keywords: string[]; text: string }> = {
@@ -142,8 +142,8 @@ export default function AIAssistant() {
       text: "Shravan's skills: Languages (Java, Python, SQL, TypeScript); Backend (Spring Boot, FastAPI, Flask, Node.js, Express.js, Next.js); Databases (MySQL, PostgreSQL, MongoDB, Redis); Cloud & DevOps (AWS EC2/S3, Docker, CI/CD, Git); AI Stack (LangChain, Gemini API, OpenAI Whisper, Hugging Face, TensorFlow, PyTorch, OpenCV, YOLO, FAISS, Pinecone)."
     },
     enlightlab: {
-      keywords: ['independent', 'work', 'voice agent', 'clinical scribe', 'prd', 'whisper', 'fastapi', 'prisma', 'postgres', 'developer', 'builder'],
-      text: "As an Independent AI Engineer (March – May 2025), Shravan built a real-time Voice Agent, an AI Clinical Scribe (Whisper + FastAPI + Next.js), an AI Readiness Testing tool, and a PRD Document Creator (Gemini API + Next.js), deploying them using Prisma and Docker."
+      keywords: ['enlight', 'lab', 'internship', 'voice agent', 'clinical scribe', 'prd', 'whisper', 'fastapi', 'prisma', 'postgres', 'intern', 'work'],
+      text: "During his AI Engineer internship at Enlight Lab (March – May 2025), Shravan built a real-time Voice Agent, an AI Clinical Scribe (Whisper + FastAPI + Next.js), an AI Readiness Testing tool, and a PRD Document Creator (Gemini API + Next.js), deploying them using Prisma and Docker."
     },
     airport: {
       keywords: ['airport', 'aai', 'cctv', 'surveillance', 'video', 'opencv', 'feeds', 'detection', 'threat', 'intrusion', 'camera'],
@@ -351,8 +351,8 @@ export default function AIAssistant() {
         <button className="suggest-chip" onClick={() => handleUserQuery("What are Shravan's core skills?")}>
           What are his skills?
         </button>
-        <button className="suggest-chip" onClick={() => handleUserQuery("Tell me about his independent AI projects.")}>
-          Independent AI projects?
+        <button className="suggest-chip" onClick={() => handleUserQuery("Tell me about his internship at Enlight Lab.")}>
+          Enlight Lab Intern experience?
         </button>
         <button className="suggest-chip" onClick={() => handleUserQuery("Has he won any hackathons?")}>
           Did he win any hackathons?
