@@ -44,15 +44,15 @@ export default function ProjectFilter() {
 
   const projects: Project[] = [
     {
-      id: 'carescribe',
-      title: 'CareScribe- AI Clinical Assistant',
+      id: 'ClinicalScribe',
+      title: 'ClinicalScribe- AI Clinical Assistant',
       category: 'fullstack',
       categoryLabel: 'Full Stack / AI Scribe',
       categoryIcon: 'fa-solid fa-house-laptop',
       badge: { text: 'Production Ready', icon: 'fa-solid fa-circle-check', style: 'shipped' },
       description: 'Ambient AI clinical scribe recording consultations, transcribing with speaker labels, generating SOAP notes, and exporting to EHR systems in one click.',
       detailedExplanation: {
-        overview: 'CareScribe is an ambient AI documentation assistant designed for clinical settings. It records conversation audio between doctors and patients, transcribes it with speaker turn labels, automatically drafts structured medical SOAP notes, extracts billing codes, and exports everything to Electronic Health Records (EHR) using the FHIR R4 standard.',
+        overview: 'ClinicalScribe is an ambient AI documentation assistant designed for clinical settings. It records conversation audio between doctors and patients, transcribes it with speaker turn labels, automatically drafts structured medical SOAP notes, extracts billing codes, and exports everything to Electronic Health Records (EHR) using the FHIR R4 standard.',
         architecture: [
           'Audio capture: Clinician clicks "New Encounter" in the browser, starting ambient recording.',
           'Speaker Diarization: AssemblyAI API transcribes the audio, automatically separating Doctor and Patient voices.',
@@ -80,7 +80,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'voiceagents',
-      title: 'Enlight AI- 18 Autonomous Voice Agents',
+      title: '18 Autonomous Voice Agents',
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',
@@ -137,13 +137,13 @@ export default function ProjectFilter() {
     },
     {
       id: 'ai-readiness',
-      title: 'AI Readiness Scorecard- Enlight Lab',
+      title: 'AI Readiness Scorecard',
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
       description: 'A free, public lead generation tool that helps CTOs and engineering leaders understand how AI-ready their company is through a 12-question maturity scorecard.',
       detailedExplanation: {
-        overview: 'Built for Enlight Lab, this tool assesses companies on AI adoption metrics across 4 business dimensions. It calculates a score out of 100, assigns a maturity tier, generates dynamic action guides, locks results behind an email gate, and syncs leads directly to HubSpot CRM and Supabase.',
+        overview: 'This tool assesses companies on AI adoption metrics across 4 business dimensions. It calculates a score out of 100, assigns a maturity tier, generates dynamic action guides, locks results behind an email gate, and syncs leads directly to HubSpot CRM and Supabase.',
         architecture: [
           'Assessment: Users answer 12 yes/partial/no questions across Team, Data, Automation, and Strategy.',
           'Scoring: A lightweight library evaluates answers, converting them into scores and 1 of 5 tiers.',
@@ -169,7 +169,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'tech-stack-auditor',
-      title: 'Tech Stack Auditor- Enlight Lab',
+      title: 'Tech Stack Auditor',
       category: 'fullstack',
       categoryLabel: 'Full Stack',
       categoryIcon: 'fa-solid fa-house-laptop',
@@ -202,7 +202,7 @@ export default function ProjectFilter() {
     },
     {
       id: 'voice-widget',
-      title: 'AI Assistant & Voice Widget- Enlight Lab',
+      title: 'AI Assistant & Voice Widget',
       category: 'ai-ml',
       categoryLabel: 'AI & ML',
       categoryIcon: 'fa-solid fa-brain',

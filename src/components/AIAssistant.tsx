@@ -44,9 +44,9 @@ export default function AIAssistant() {
              • <strong>AI Frameworks & Stack:</strong> LangChain, Gemini API, OpenAI Whisper, Hugging Face, TensorFlow, PyTorch, OpenCV, YOLO, FAISS, Pinecone<br>
              • <strong>Development Practices:</strong> OOP, System Design, SDLC, Agile, Technical Documentation, Testing & Debugging`,
     
-    enlightlab: `During his internship at <strong>Enlight Lab</strong> (March - May 2025), Shravan served as an AI Engineer Intern. He independently built and deployed multiple production products:<br>
+    enlightlab: `Working as an Independent AI Engineer (March - May 2025), Shravan built and deployed multiple production products:<br>
                  1. <strong>18 Autonomous Voice Agents (Enlight AI)</strong>: Voice platform built with Retell AI WebRTC SDK.<br>
-                 2. <strong>CareScribe (AI Clinical Scribe)</strong>: Ambient scribe built using OpenAI Whisper + FastAPI backend + Next.js frontend.<br>
+                 2. <strong>ClinicalScribe (AI Clinical Scribe)</strong>: Ambient scribe built using OpenAI Whisper + FastAPI backend + Next.js frontend.<br>
                  3. <strong>PRD Document Creator</strong>: Intake chatbot leveraging Next.js and the Gemini API.<br>
                  4. <strong>AI Readiness Scorecard</strong>: Lead gen mature assessment quiz syncing to Supabase and HubSpot.<br>
                  5. <strong>Tech Stack Auditor</strong>: Evaluation tool mapping tech stacks to consulting risks.`,
@@ -112,7 +112,7 @@ export default function AIAssistant() {
     
     relocation: `Yes, Shravan Kotagi is fully open to relocating for full-time backend or AI engineering roles, and is highly adaptable to hybrid/remote work setups.`,
 
-    carescribe: `<strong>CareScribe- AI Clinical Assistant</strong> is an ambient scribe system built by Shravan. Key features:<br>
+    ClinicalScribe: `<strong>ClinicalScribe- AI Clinical Assistant</strong> is an ambient scribe system built by Shravan. Key features:<br>
                  • Transcribes consults with speaker labels using AssemblyAI/Whisper.<br>
                  • Dynamically structures SOAP clinical notes and extracts ICD-10/CPT coding with Gemini 2.5 Flash.<br>
                  • Built with Next.js 16, Prisma ORM, Neon cloud PostgreSQL, and Better Auth.`,
@@ -129,7 +129,7 @@ export default function AIAssistant() {
               • <strong>Commodities Market</strong>: Analyzing demand-supply cycles, USD strength, and trends for gold, silver, crude oil, and natural gas.<br>
               • <strong>Analysis Methods</strong>: Integrates fundamental statistics (P/E, D/E ratios, FCF) with technical charts (moving averages, support/resistance, trendlines) and strict risk-to-reward metrics.`,
 
-    default: `I can search Shravan's resume for anything! Try asking about his: <strong>skills</strong>, <strong>Enlight Lab internship</strong>, <strong>Airport CCTV project</strong>, <strong>Softech Solutions role</strong>, or specific projects like <strong>CareScribe</strong>, <strong>Voice Agents</strong>, <strong>PDF RAG</strong>, <strong>ProHomeCare</strong>, <strong>Finance ledger</strong>, <strong>E-Governance</strong>, <strong>ZKP Iris Biometrics</strong>, <strong>Hackathons</strong>, <strong>Financial Markets</strong>, and <strong>Contact info</strong>.`
+    default: `I can search Shravan's resume for anything! Try asking about his: <strong>skills</strong>, <strong>independent AI work</strong>, <strong>Airport CCTV project</strong>, <strong>Softech Solutions role</strong>, or specific projects like <strong>ClinicalScribe</strong>, <strong>Voice Agents</strong>, <strong>PDF RAG</strong>, <strong>ProHomeCare</strong>, <strong>Finance ledger</strong>, <strong>E-Governance</strong>, <strong>ZKP Iris Biometrics</strong>, <strong>Hackathons</strong>, <strong>Financial Markets</strong>, and <strong>Contact info</strong>.`
   };
 
   const corpus: Record<string, { keywords: string[]; text: string }> = {
@@ -142,8 +142,8 @@ export default function AIAssistant() {
       text: "Shravan's skills: Languages (Java, Python, SQL, TypeScript); Backend (Spring Boot, FastAPI, Flask, Node.js, Express.js, Next.js); Databases (MySQL, PostgreSQL, MongoDB, Redis); Cloud & DevOps (AWS EC2/S3, Docker, CI/CD, Git); AI Stack (LangChain, Gemini API, OpenAI Whisper, Hugging Face, TensorFlow, PyTorch, OpenCV, YOLO, FAISS, Pinecone)."
     },
     enlightlab: {
-      keywords: ['enlight', 'lab', 'internship', 'voice agent', 'clinical scribe', 'prd', 'whisper', 'fastapi', 'prisma', 'postgres', 'intern', 'work'],
-      text: "During his AI Engineer internship at Enlight Lab (March – May 2025), Shravan built a real-time Voice Agent, an AI Clinical Scribe (Whisper + FastAPI + Next.js), an AI Readiness Testing tool, and a PRD Document Creator (Gemini API + Next.js), deploying them using Prisma and Docker."
+      keywords: ['independent', 'work', 'voice agent', 'clinical scribe', 'prd', 'whisper', 'fastapi', 'prisma', 'postgres', 'developer', 'builder'],
+      text: "As an Independent AI Engineer (March – May 2025), Shravan built a real-time Voice Agent, an AI Clinical Scribe (Whisper + FastAPI + Next.js), an AI Readiness Testing tool, and a PRD Document Creator (Gemini API + Next.js), deploying them using Prisma and Docker."
     },
     airport: {
       keywords: ['airport', 'aai', 'cctv', 'surveillance', 'video', 'opencv', 'feeds', 'detection', 'threat', 'intrusion', 'camera'],
@@ -197,9 +197,9 @@ export default function AIAssistant() {
       keywords: ['relocate', 'relocation', 'travel', 'move', 'adapt', 'join', 'office'],
       text: "Yes, Shravan is open to relocation for intern and full-time opportunities, and is highly adaptable to hybrid and remote workspace environments."
     },
-    carescribe: {
-      keywords: ['carescribe', 'scribe', 'clinical', 'medical', 'doctor', 'soap', 'notes', 'icd', 'billing', 'assemblyai', 'whisper'],
-      text: "CareScribe is Shravan's ambient AI clinical documentation assistant project utilizing AssemblyAI for transcription, Gemini 2.5 Flash for SOAP note formatting, and Next.js, Prisma, PostgreSQL for the portal."
+    ClinicalScribe: {
+      keywords: ['ClinicalScribe', 'scribe', 'clinical', 'medical', 'doctor', 'soap', 'notes', 'icd', 'billing', 'assemblyai', 'whisper'],
+      text: "ClinicalScribe is Shravan's ambient AI clinical documentation assistant project utilizing AssemblyAI for transcription, Gemini 2.5 Flash for SOAP note formatting, and Next.js, Prisma, PostgreSQL for the portal."
     },
     voiceagents: {
       keywords: ['voiceagent', 'voiceagents', 'voice', 'agents', 'telephony', 'retell', 'webrtc', 'call', 'concierge', 'support'],
@@ -351,8 +351,8 @@ export default function AIAssistant() {
         <button className="suggest-chip" onClick={() => handleUserQuery("What are Shravan's core skills?")}>
           What are his skills?
         </button>
-        <button className="suggest-chip" onClick={() => handleUserQuery("Tell me about his internship at Enlight Lab.")}>
-          Enlight Lab Intern experience?
+        <button className="suggest-chip" onClick={() => handleUserQuery("Tell me about his independent AI projects.")}>
+          Independent AI projects?
         </button>
         <button className="suggest-chip" onClick={() => handleUserQuery("Has he won any hackathons?")}>
           Did he win any hackathons?
