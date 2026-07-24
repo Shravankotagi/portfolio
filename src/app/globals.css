@@ -162,8 +162,8 @@ button {
 }
 
 .section-padding {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .grid-2 {
@@ -1373,9 +1373,7 @@ button {
    AI RESUME ASSISTANT SECTION
    ========================================================================== */
 .ai-scribe-section {
-  background-color: hsl(220, 15%, 96%);
-  border-top: 1px solid var(--border-default);
-  border-bottom: 1px solid var(--border-default);
+  /* Matched with main page background color */
 }
 
 .ai-chat-container {
@@ -1913,8 +1911,8 @@ button {
 
 @media (max-width: 768px) {
   .section-padding {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
 
   .grid-4 {
@@ -2665,6 +2663,169 @@ button {
     padding: 24px;
     margin: 12px;
     max-height: 90vh;
+  }
+}
+
+/* ==========================================================================
+   FINANCIAL MARKETS SECTION
+   ========================================================================== */
+.finance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.finance-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.finance-card:hover::before {
+  opacity: 1;
+}
+
+.finance-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(111, 76, 255, 0.08);
+  border-color: rgba(111, 76, 255, 0.35);
+}
+
+.finance-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(111, 76, 255, 0.08);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.finance-card:hover .finance-card-icon {
+  transform: scale(1.1);
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.finance-card h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.finance-card p {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.finance-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.finance-tags span {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-default);
+  border-radius: 20px;
+  color: var(--muted);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.finance-card:hover .finance-tags span {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-color: rgba(111, 76, 255, 0.15);
+}
+
+.finance-insights-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 48px;
+  padding: 32px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.insight-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.insight-value {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.insight-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.insight-divider {
+  width: 1px;
+  height: 48px;
+  background-color: var(--border-default);
+}
+
+@media (max-width: 768px) {
+  .finance-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .finance-insights-banner {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .insight-divider {
+    width: 80%;
+    height: 1px;
   }
 }
 

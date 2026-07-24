@@ -243,6 +243,13 @@ export default function Home() {
               Projects
             </a>
             <a
+              href="#finance"
+              className={`nav-link ${activeSection === 'finance' ? 'active' : ''}`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Finance
+            </a>
+            <a
               href="#ai-scribe"
               className={`nav-link ${activeSection === 'ai-scribe' ? 'active' : ''}`}
               onClick={() => setIsMobileMenuOpen(false)}
@@ -727,6 +734,100 @@ export default function Home() {
               <div className="section-line"></div>
             </div>
             <ProjectFilter />
+          </div>
+        </section>
+
+        {/* Finance & Markets Section */}
+        <section className="finance-section section-padding reveal" id="finance">
+          <div className="container">
+            <div className="section-header">
+              <span className="subtitle-badge">Finance & Analysis</span>
+              <h2 className="section-title">Financial Markets Experience</h2>
+              <p className="section-subtitle-description">
+                Active investor and market analyst with 3+ years of experience across multiple financial asset classes, combining technical precision with fundamental indicators.
+              </p>
+              <div className="section-line"></div>
+            </div>
+
+            <div className="finance-grid">
+              <div className="finance-card card-hover">
+                <div className="finance-card-icon">
+                  <i className="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Indian Stock Market</h3>
+                <p>
+                  Engaged in equity trading and long-term investing across NSE/BSE. Specialize in sector-wise growth analysis, value investing, and optimizing portfolio returns based on company earnings, market capitalizations, and macroeconomic indicators.
+                </p>
+                <div className="finance-tags">
+                  <span>Equities</span>
+                  <span>Portfolio Management</span>
+                  <span>NSE/BSE</span>
+                </div>
+              </div>
+
+              <div className="finance-card card-hover">
+                <div className="finance-card-icon">
+                  <i className="fa-solid fa-coins"></i>
+                </div>
+                <h3>Forex Markets</h3>
+                <p>
+                  Analyze major and minor currency pairs by monitoring central bank policy rates, inflation dynamics, global macroeconomic data feeds, and geopolitical events. Apply systematic risk management to calculate trade viability.
+                </p>
+                <div className="finance-tags">
+                  <span>FX Trading</span>
+                  <span>Macro Analysis</span>
+                  <span>Risk Management</span>
+                </div>
+              </div>
+
+              <div className="finance-card card-hover">
+                <div className="finance-card-icon">
+                  <i className="fa-solid fa-cubes"></i>
+                </div>
+                <h3>Commodities Market</h3>
+                <p>
+                  Formulate strategic trading views on gold, silver, crude oil, and natural gas. Track global supply/demand imbalances, US Dollar strength fluctuations, inventory releases, and cyclical seasonal trends to hedge and capitalize on price actions.
+                </p>
+                <div className="finance-tags">
+                  <span>Commodities</span>
+                  <span>Supply-Demand</span>
+                  <span>Hedging</span>
+                </div>
+              </div>
+
+              <div className="finance-card card-hover">
+                <div className="finance-card-icon">
+                  <i className="fa-solid fa-magnifying-glass-chart"></i>
+                </div>
+                <h3>Stock Analysis & Strategy</h3>
+                <p>
+                  Execute thorough stock evaluations by integrating key fundamental metrics (P/E ratio, D/E ratio, ROE, Free Cash Flow) with technical analysis (support/resistance, moving averages, trendline breakouts). Deploy strict risk-to-reward metrics.
+                </p>
+                <div className="finance-tags">
+                  <span>Fundamental Analysis</span>
+                  <span>Technical Charting</span>
+                  <span>Risk:Reward</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual highlight box showing key stats/beliefs */}
+            <div className="finance-insights-banner">
+              <div className="insight-metric">
+                <span className="insight-value">3+ Years</span>
+                <span className="insight-label">Active Market Experience</span>
+              </div>
+              <div className="insight-divider"></div>
+              <div className="insight-metric">
+                <span className="insight-value">1:2+</span>
+                <span className="insight-label">Min Risk-to-Reward Ratio</span>
+              </div>
+              <div className="insight-divider"></div>
+              <div className="insight-metric">
+                <span className="insight-value">Data-Driven</span>
+                <span className="insight-label">Analysis Approach</span>
+              </div>
+            </div>
           </div>
         </section>
 

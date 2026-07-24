@@ -122,7 +122,14 @@ export default function AIAssistant() {
                   • Low-latency real-time voice streaming powered by Retell AI WebRTC SDK.<br>
                   • Shipped using TypeScript, Next.js, and Render.`,
 
-    default: `I can search Shravan's resume for anything! Try asking about his: <strong>skills</strong>, <strong>Enlight Lab internship</strong>, <strong>Airport CCTV project</strong>, <strong>Softech Solutions role</strong>, or specific projects like <strong>CareScribe</strong>, <strong>Voice Agents</strong>, <strong>PDF RAG</strong>, <strong>ProHomeCare</strong>, <strong>Finance ledger</strong>, <strong>E-Governance</strong>, <strong>ZKP Iris Biometrics</strong>, <strong>Hackathons</strong>, and <strong>Contact info</strong>.`
+    markets: `<strong>Financial Markets Experience:</strong><br>
+              Shravan has 3+ years of active experience investing and trading in financial markets:<br>
+              • <strong>Indian Stock Market</strong>: Equity trading and long-term investing on NSE/BSE, sector-wise analysis, and portfolio growth optimization.<br>
+              • <strong>Forex Markets</strong>: Tracking central bank policies, global inflation dynamics, and macroeconomic data feeds for currency pairs.<br>
+              • <strong>Commodities Market</strong>: Analyzing demand-supply cycles, USD strength, and trends for gold, silver, crude oil, and natural gas.<br>
+              • <strong>Analysis Methods</strong>: Integrates fundamental statistics (P/E, D/E ratios, FCF) with technical charts (moving averages, support/resistance, trendlines) and strict risk-to-reward metrics.`,
+
+    default: `I can search Shravan's resume for anything! Try asking about his: <strong>skills</strong>, <strong>Enlight Lab internship</strong>, <strong>Airport CCTV project</strong>, <strong>Softech Solutions role</strong>, or specific projects like <strong>CareScribe</strong>, <strong>Voice Agents</strong>, <strong>PDF RAG</strong>, <strong>ProHomeCare</strong>, <strong>Finance ledger</strong>, <strong>E-Governance</strong>, <strong>ZKP Iris Biometrics</strong>, <strong>Hackathons</strong>, <strong>Financial Markets</strong>, and <strong>Contact info</strong>.`
   };
 
   const corpus: Record<string, { keywords: string[]; text: string }> = {
@@ -197,6 +204,10 @@ export default function AIAssistant() {
     voiceagents: {
       keywords: ['voiceagent', 'voiceagents', 'voice', 'agents', 'telephony', 'retell', 'webrtc', 'call', 'concierge', 'support'],
       text: "Enlight AI is Shravan's 18 autonomous voice agents platform running on Retell AI WebRTC SDK, built using Next.js and TypeScript, deploying on Render."
+    },
+    markets: {
+      keywords: ['markets', 'finance', 'stock', 'share', 'investing', 'trading', 'forex', 'commodities', 'nse', 'bse', 'portfolio', 'fundamental', 'technical', 'analysis', 'investor', 'trader'],
+      text: "Shravan has 3+ years of experience analyzing financial markets. He manages equity investments on the Indian stock market (NSE/BSE), trades Forex and Commodities (Gold, Crude Oil), and performs fundamental and technical chart analysis."
     }
   };
 
@@ -345,6 +356,9 @@ export default function AIAssistant() {
         </button>
         <button className="suggest-chip" onClick={() => handleUserQuery("Has he won any hackathons?")}>
           Did he win any hackathons?
+        </button>
+        <button className="suggest-chip" onClick={() => handleUserQuery("Tell me about his financial markets and stock analysis experience.")}>
+          Finance & markets experience?
         </button>
         <button className="suggest-chip" onClick={() => handleUserQuery("What is his contact information?")}>
           How do I contact him?

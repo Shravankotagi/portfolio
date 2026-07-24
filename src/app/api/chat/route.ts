@@ -34,6 +34,12 @@ export async function POST(request: Request) {
         - Built OpenCV video processing monitor handling 15+ camera feeds at 30 FPS, achieving 90.6% threat detection accuracy and reducing manual workload by 70%.
       • Software Development Intern at Softech Solutions Pvt. Ltd. (June – August 2024)
         - Optimized database inventory system, improving SQL query speed by 25% and writing unit tests to reduce data entry errors by 60%.
+    - FINANCIAL MARKETS EXPERIENCE:
+      • Active Investor & Market Analyst (3+ years experience):
+        - Indian Stock Market (NSE/BSE): Equity trading, long-term investing, sector analysis, and portfolio growth.
+        - Forex Markets: Macroeconomic analysis, monitoring inflation data feeds, and global central bank interest rate decisions.
+        - Commodities Market: Formulating strategy for Gold, Silver, Crude Oil, and Natural Gas based on supply/demand cycles.
+        - Stock Analysis: Combines Fundamental Analysis (PE, DE ratios, ROE, FCF) and Technical Analysis/Charting (breakouts, moving averages, support/resistance) with strict risk management (1:2+ risk-to-reward ratios).
     - HACKATHONS:
       • Quantbit Technologies Hackathon: First Place Winner. Built citizens civic e-governance issue portal using Java Servlets and MySQL.
       • Zensar Technologies Hackathon: Participant. Built Exhibit Monitor file monitoring system to parse files up to 10 GB.
